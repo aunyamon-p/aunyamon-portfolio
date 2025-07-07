@@ -21,7 +21,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
       title: 'MEOW COMPANY WEBSITE',
       description: language === 'th' 
         ? 'เว็บไซต์ที่ออกแบบตาม User Story ที่อาจารย์กำหนดให้ เป็นระบบเฉพาะไว้สำหรับใช้งานในองค์กร เพื่อให้คนในองค์กรมีความสะดวกรวดเร็วในการจัดการอีเมล ทั้งการอ่าน และตอบกลับอีเมล ฟังก์ชันที่มี ได้แก่ สมัครสมาชิก เข้าสู่ระบบ เขียนอีเมล ส่งอีเมล ดูอีเมล ลบอีเมล อัปเดตสถานะอีเมล'
-        : 'A website designed according to professor-defined User Stories, specifically built for organizational use to provide convenient and fast email management for organization members, including reading and replying to emails. Features include registration, login, compose email, send email, view email, delete email, and update email status.',
+        : 'A website for internal email management, designed based on professor-defined User Stories. Main features include registration, login, compose and send emails, view inbox, reply, delete emails, and update email status.',
       tools: ['C#', 'HTML', 'CSS', 'Js', 'Azure'],
       githubLink: 'https://github.com/aunyamon-p/MeowCompany.git',
       images: [
@@ -57,10 +57,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
       title: 'Pet Care Platform (Chatbot)',
       description: language === 'th'
         ? 'แพลตฟอร์มดูแลสุขภาพสัตว์เลี้ยงแบบครบวงจรผ่านเว็บไซต์และแชทบอท สามารถค้นหาคลินิก สัตวแพทย์ และรับคำแนะนำเบื้องต้นเกี่ยวกับสุขภาพสัตว์ได้'
-        : 'A comprehensive pet health care platform through website and chatbot. Can search for clinics, veterinarians, and receive basic health advice for pets.',
+        : 'A pet health care platform with website and chatbot for finding clinics, veterinarians, and receiving basic pet health advice.',
       tools: ['Bolt.new', 'React', 'Tailwind CSS', 'Supabase'],
       githubLink: 'https://petbuddycare.org/',
-      images: ['photo-1518770660439-4636190af475'],
+      images: [
+        '/lovable-uploads/71a0bb08-16a7-4d16-a1db-0a364748dae9.png',
+        '/lovable-uploads/bf476bcd-0c05-479d-acb8-76e1091d5bec.png'
+      ],
       mediaType: 'image' as const,
       isWebLink: true
     },
@@ -71,7 +74,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         : 'A task management website for organizing to-do lists, including SignIn, SignUp, Add Task, Edit Task, Delete Task, Kanban Board (Drag & Drop Tasks).',
       tools: ['HTML', 'Tailwind CSS', 'Angular'],
       githubLink: 'https://github.com',
-      images: ['photo-1470071459604-3b5ec3a7fe05', 'photo-1482938289607-e9573fc25abb', 'photo-1501854140801-50d01698950b'],
+      images: [
+        '/lovable-uploads/f3963761-4414-4fd5-b7cf-e537125f86a7.png',
+        '/lovable-uploads/b669765e-c469-48ce-93db-15da528b65c4.png',
+        '/lovable-uploads/1194cd00-5bb0-497b-b26e-4cfecee3ac78.png',
+        '/lovable-uploads/1221d42b-d4ac-4c9e-97f6-2b9b660a2c80.png',
+        '/lovable-uploads/b07c058c-cd7a-4400-8ef6-e7d73ef02939.png',
+        '/lovable-uploads/e0c86601-ecf5-4a42-8719-484bd1e88a64.png'
+      ],
       mediaType: 'image' as const
     }
   ];
@@ -79,9 +89,18 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
   const currentContent = content[language];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-16">
+    <section id="projects" className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-4 h-4 bg-tech-cyan/20 rounded-full animate-float"></div>
+        <div className="absolute top-32 right-20 w-6 h-6 bg-tech-cyan/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-5 h-5 bg-tech-cyan/15 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-10 w-3 h-3 bg-tech-cyan/25 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-32 right-1/3 w-7 h-7 bg-tech-cyan/10 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-tech-slate mb-4">
             {currentContent.title}
           </h2>

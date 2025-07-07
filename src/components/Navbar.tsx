@@ -69,10 +69,13 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
     <nav className="fixed top-0 left-0 right-0 z-40 bg-tech-slate/95 backdrop-blur-md border-b border-white/10 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Name */}
-          <div className="text-tech-cyan text-xl font-bold">
+          {/* Logo/Name - Now clickable */}
+          <button
+            onClick={() => scrollToSection('hero')}
+            className="text-tech-cyan text-xl font-bold hover:text-tech-cyan/80 transition-colors"
+          >
             Aunyamon.P
-          </div>
+          </button>
 
           {/* Desktop Navigation and Language Toggle */}
           <div className="hidden md:flex items-center space-x-4">
