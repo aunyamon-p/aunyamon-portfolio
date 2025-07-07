@@ -58,12 +58,6 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           {/* Aunyamon.P */}
           <div className="animate-fade-in">
             <h3 className="text-2xl font-bold text-tech-cyan mb-4">Aunyamon.P</h3>
-            <p className="text-gray-300 mb-4">
-              {language === 'th' 
-                ? 'Frontend Developer ที่กำลังพัฒนาทักษะและมองหาโอกาสในการเติบโต' 
-                : 'Frontend Developer focused on growth and learning opportunities'
-              }
-            </p>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/aunyamon-p"
@@ -72,12 +66,6 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
                 className="text-gray-300 hover:text-tech-cyan transition-colors"
               >
                 <Github size={20} />
-              </a>
-              <a
-                href="mailto:aunyamon.p@bumail.net"
-                className="text-gray-300 hover:text-tech-cyan transition-colors"
-              >
-                <Mail size={20} />
               </a>
             </div>
           </div>
@@ -127,12 +115,11 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-tech-cyan" />
-                <a
-                  href="mailto:aunyamon.p@bumail.net"
+                <span
                   className="text-gray-300 hover:text-tech-cyan transition-colors"
                 >
                   {currentContent.email}
-                </a>
+                </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-tech-cyan" />
