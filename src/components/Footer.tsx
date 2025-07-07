@@ -15,9 +15,9 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       about: 'เกี่ยวกับฉัน',
       skills: 'ทักษะ',
       projects: 'ผลงาน',
-      email: 'aunyamon.p@bumail.net',
-      phone: '+66 xx-xxx-xxxx',
-      location: 'กรุงเทพมหานคร, ประเทศไทย'
+      email: 'aunyamon.plun@gmail.com',
+      phone: '+66 895992094',
+      location: 'ปทุมธานี, ประเทศไทย'
     },
     en: {
       quickLinks: 'Quick Links',
@@ -26,9 +26,9 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       about: 'About',
       skills: 'Skills',
       projects: 'Projects',
-      email: 'aunyamon.p@bumail.net',
-      phone: '+66 xx-xxx-xxxx',
-      location: 'Bangkok, Thailand'
+      email: 'aunyamon.plun@gmail.com',
+      phone: '+66 895992094',
+      location: 'Pathum Thani, Thailand'
     }
   };
 
