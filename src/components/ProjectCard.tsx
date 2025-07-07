@@ -45,7 +45,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <ProjectCarousel images={images} title={title} />
       ) : (
         <div className="relative h-48 overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
+          {images && images.length > 0 ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              src={images[0]}
+              onError={(e) => {
+                console.error('Video loading error:', e);
+                // แสดง fallback UI เมื่อวิดีโอโหลดไม่ได้
+                const target = e.target as HTMLVideoElement;
+                target.style.display = 'none';
+                const fallback = target.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = 'flex';
+              }}
+            />
+          ) : null}
+          
+          {/* Fallback UI เมื่อไม่มีวิดีโอหรือวิดีโอโหลดไม่ได้ */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center" style={{ display: 'none' }}>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-tech-cyan/20 flex items-center justify-center">
                 <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
@@ -53,6 +73,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 </svg>
               </div>
               <p className="text-white text-sm">Video Demo</p>
+            </div>
+          </div>
+          
+          {/* Video overlay สำหรับแสดงข้อมูลเพิ่มเติม */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <div className="text-center">
+              <div className="w-12 h-12 mx-auto rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
