@@ -68,7 +68,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
       isWebLink: true
     },
     {
-      title: 'TodoList Website(UI)',
+      title: 'TodoList Website (UI)',
       description: language === 'th'
         ? 'เว็บไซต์จัดการลําดับรายการสิ่งที่ต้องทํา ประกอบด้วย SignIn , SignUp , Add Task , Edit Task , Delete Task , Kandan Board (Darg & Drop Tasks ได้)'
         : 'A task management website for organizing to-do lists, including SignIn, SignUp, Add Task, Edit Task, Delete Task, Kanban Board (Drag & Drop Tasks).',
