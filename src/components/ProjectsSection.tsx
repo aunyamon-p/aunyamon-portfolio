@@ -40,7 +40,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         : 'A website for selling in-game items, specifically "mushrooms" from the Roblox game "Creatures of Sonaria". Main features include login/registration, add/remove products, shopping cart, top-up money, payment, and transaction history.',
       tools: ['HTML', 'CSS', 'Js', 'React.js', 'Node.js'],
       githubLink: 'https://github.com/aunyamon-p/Shroom_shop.git',
-      images: ['photo-1488590528505-98d2b5aba04b'],
+      images: ['/lovable-uploads/shroom.mp4'],
       mediaType: 'video' as const
     },
     {
@@ -50,7 +50,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         : 'A website displaying general company information.',
       tools: ['HTML', 'Js', 'Tailwind CSS'],
       githubLink: 'https://github.com/aunyamon-p/CompanyWeb.git',
-      images: ['photo-1649972904349-6e44c42644a7'],
+      images: ['/lovable-uploads/company.mp4'],
       mediaType: 'video' as const
     },
     {
