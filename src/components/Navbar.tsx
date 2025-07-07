@@ -104,7 +104,9 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
 
           {/* Mobile Menu - Language Toggle and Hamburger */}
           <div className="md:hidden flex items-center space-x-4">
-            <LanguageToggle language={language} onToggle={onLanguageToggle} />
+            <div className="scale-90">
+                <LanguageToggle language={language} onToggle={onLanguageToggle} />
+            </div>
             
             <Button
               variant="ghost"
