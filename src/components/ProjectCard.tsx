@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -41,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const currentContent = content[language];
 
   return (
-    <Card className="overflow-hidden bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+    <Card className="md:h-full overflow-hidden bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105 group flex flex-col">
       {mediaType === 'image' ? (
         <ProjectCarousel images={images} title={title} />
       ) : (
@@ -59,12 +58,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       )}
 
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-bold text-tech-slate mb-3 group-hover:text-tech-cyan transition-colors">
           {title}
         </h3>
         
-        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+        <p className="text-gray-600 mb-4 text-sm leading-relaxed flex-1">
           {description}
         </p>
 
@@ -86,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         <Button
           asChild
-          className="w-full bg-tech-cyan hover:bg-tech-cyan/90 text-tech-slate font-semibold"
+          className="w-full bg-tech-cyan hover:bg-tech-cyan/90 text-tech-slate font-semibold mt-auto"
         >
           <a href={githubLink} target="_blank" rel="noopener noreferrer">
             {isWebLink ? currentContent.viewWebsite : currentContent.viewCode}
