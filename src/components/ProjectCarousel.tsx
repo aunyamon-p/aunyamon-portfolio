@@ -24,12 +24,20 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
     return () => clearInterval(interval);
   }, [images.length, autoSlideInterval]);
 
+  const getImageSrc = (image: string) => {
+    // Check if it's an uploaded image path or an Unsplash image ID
+    if (image.startsWith('/lovable-uploads/')) {
+      return image;
+    }
+    return `https://images.unsplash.com/${image}?w=400&h=200&fit=crop`;
+  };
+
   return (
     <div className="relative h-48 overflow-hidden rounded-t-lg">
       {images.map((image, index) => (
         <img
           key={index}
-          src={`https://images.unsplash.com/${image}?w=400&h=200&fit=crop`}
+          src={getImageSrc(image)}
           alt={`${title} screenshot ${index + 1}`}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'

@@ -16,7 +16,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
       greeting: 'สวัสดี ฉันคือ',
       name: 'Aunyamon Plunsungket',
       subtitle: 'Frontend Developer',
-      description: 'ยินดีต้อนรับสู่เว็บไซต์แสดงผลงานของฉัน ที่รวบรวมโปรเจกต์และทักษะทางด้านการพัฒนาเว็บไซต์',
+      description: 'ยินดีต้อนรับสู่เว็บไซต์แสดงผลงานของฉัน',
       cta: 'ดูผลงานของฉัน',
       github: 'GitHub โปรไฟล์'
     },
@@ -77,10 +77,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <button
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center px-8 py-4 bg-tech-cyan text-tech-slate font-semibold rounded-full hover:bg-tech-cyan/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-tech-cyan/25"
+                  className="w-full sm:w-auto min-w-[200px] px-8 py-4 bg-tech-cyan text-tech-slate font-semibold rounded-full hover:bg-tech-cyan/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-tech-cyan/25"
                 >
                   {currentContent.cta}
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
                 </button>
@@ -88,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
                 <Button
                   asChild
                   variant="outline"
-                  className="inline-flex items-center px-8 py-4 border-2 border-tech-cyan text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                  className="w-full sm:w-auto min-w-[200px] px-8 py-4 border-2 border-tech-cyan text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
                 >
                   <a href="https://github.com/aunyamon-p" target="_blank" rel="noopener noreferrer">
                     {currentContent.github}

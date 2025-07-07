@@ -20,7 +20,11 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ language, onToggle }) =
             : 'text-white hover:bg-white/20'
         }`}
       >
-        <span className="text-lg">🇹🇭</span>
+        <img 
+          src="/lovable-uploads/302618d1-1d2e-4eb3-877a-08acdb9d90a4.png" 
+          alt="Thailand Flag" 
+          className="w-5 h-5 rounded-full object-cover"
+        />
         TH
       </Button>
       <Button
@@ -33,7 +37,11 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ language, onToggle }) =
             : 'text-white hover:bg-white/20'
         }`}
       >
-        <span className="text-lg">🇬🇧</span>
+        <img 
+          src="/lovable-uploads/26179352-d8c8-43e4-8211-bf4702579822.png" 
+          alt="UK Flag" 
+          className="w-5 h-5 rounded-full object-cover"
+        />
         EN
       </Button>
     </div>
