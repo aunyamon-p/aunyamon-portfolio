@@ -32,7 +32,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
       description: "ฉันกำลังมุ่งเน้นในการพัฒนาทักษะ Front-end และต้องการเรียนรู้เทคโนโลยี Backend เพิ่มเติม ฉันกำลังมองหาตำแหน่งฝึกงานที่จะให้ประสบการณ์การทำงานจริง ทำโปรเจกต์จริง และเรียนรู้การทำงานเป็นทีม ฉันพร้อมเสมอที่จะเรียนรู้เครื่องมือใหม่ ๆ เทคโนโลยี และแนวปฏิบัติที่ดี เพื่อเติบโตในสายงาน Developer ตามที่ตั้งใจไว้",
       education: {
         title: 'การศึกษา',
-        period: '16 มิถุนายน - ปัจจุบัน',
+        period: 'มิถุนายน 2023 - ปัจจุบัน',
         university: 'มหาวิทยาลัยกรุงเทพ',
         faculty: 'คณะเทคโนโลยีและนวัตกรรม',
         major: 'สาขาวิทยาการคอมพิวเตอร์'
@@ -43,7 +43,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
       description: "I'm currently focusing on improving my front-end development skills and want to learn more about backend technologies. I'm looking for an internship where I can gain real-world experience, work on real projects, and learn how to collaborate in a team. I'm always open to learning new tools, technologies and best practices to grow as a developer.",
       education: {
         title: 'Education',
-        period: '16 June - Present',
+        period: 'June 2023 - Present',
         university: 'Bangkok University',
         faculty: 'Technology and Innovation faculty',
         major: 'Major of Computer science'
@@ -81,7 +81,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
 
           {/* Education Card */}
           <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-            <div className="border-l-4 border-l-tech-cyan bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <div className="border-tech-slate border-l-4 border-l-tech-cyan bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-tech-cyan rounded-full"></div>
                 <h3 className="text-2xl font-bold text-tech-cyan">
