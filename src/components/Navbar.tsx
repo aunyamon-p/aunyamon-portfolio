@@ -142,3 +142,4 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
     </nav>
   );
 };
+export default Navbar;
