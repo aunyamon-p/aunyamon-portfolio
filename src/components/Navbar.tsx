@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import LanguageToggle from './LanguageToggle';
@@ -77,9 +76,8 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
             Aunyamon.P
           </button>
 
-          {/* Desktop Navigation and Language Toggle */}
-          <div className="hidden md:flex items-center space-x-4">
-            {/* Navigation Menu */}
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-1 bg-white/10 rounded-full p-1">
               {currentContent.nav.map((item) => (
                 <Button
@@ -97,8 +95,10 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
                 </Button>
               ))}
             </div>
+          </div>
 
-            {/* Language Toggle */}
+          {/* Desktop Language Toggle - Right */}
+          <div className="hidden md:flex">
             <LanguageToggle language={language} onToggle={onLanguageToggle} />
           </div>
 
@@ -142,5 +142,3 @@ const Navbar: React.FC<NavbarProps> = ({ language, onLanguageToggle }) => {
     </nav>
   );
 };
-
-export default Navbar;
