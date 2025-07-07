@@ -73,8 +73,8 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
           <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-tech-cyan to-tech-cyan/70 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
+                  <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
                 </div>
@@ -86,7 +86,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
                 {skills.programmingLanguages.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border border-tech-cyan/20 hover:bg-tech-cyan/20 transition-colors"
+                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors"
                   >
                     {skill}
                   </span>
@@ -112,7 +112,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
                 {skills.librariesFrameworks.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-tech-slate/10 text-tech-slate rounded-lg text-sm border border-tech-slate/20 hover:bg-tech-slate/20 transition-colors"
+                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors"
                   >
                     {skill}
                   </span>
@@ -125,8 +125,8 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
           <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
+                  <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
                 </div>
@@ -138,7 +138,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
                 {skills.tools.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg text-sm border border-purple-200 hover:bg-purple-200 transition-colors"
+                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors"
                   >
                     {skill}
                   </span>
