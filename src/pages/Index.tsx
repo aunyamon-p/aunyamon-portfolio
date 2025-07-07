@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
-import LanguageToggle from '@/components/LanguageToggle';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
@@ -17,8 +16,7 @@ const Index = () => {
 
   return (
     <div className="font-prompt">
-      <Navbar language={language} />
-      <LanguageToggle language={language} onToggle={handleLanguageToggle} />
+      <Navbar language={language} onLanguageToggle={handleLanguageToggle} />
       
       <main>
         <section id="hero">

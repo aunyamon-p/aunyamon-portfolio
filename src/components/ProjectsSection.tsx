@@ -23,7 +23,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         ? 'เว็บไซต์ที่ออกแบบตาม User Story ที่อาจารย์กำหนดให้ เป็นระบบเฉพาะไว้สำหรับใช้งานในองค์กร เพื่อให้คนในองค์กรมีความสะดวกรวดเร็วในการจัดการอีเมล ทั้งการอ่าน และตอบกลับอีเมล ฟังก์ชันที่มี ได้แก่ สมัครสมาชิก เข้าสู่ระบบ เขียนอีเมล ส่งอีเมล ดูอีเมล ลบอีเมล อัปเดตสถานะอีเมล'
         : 'A website designed according to professor-defined User Stories, specifically built for organizational use to provide convenient and fast email management for organization members, including reading and replying to emails. Features include registration, login, compose email, send email, view email, delete email, and update email status.',
       tools: ['C#', 'HTML', 'CSS', 'JavaScript', 'Azure'],
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/aunyamon-p/MeowCompany.git',
       images: ['photo-1461749280684-dccba630e2f6', 'photo-1486312338219-ce68d2c6f44d', 'photo-1487058792275-0ad4aaf24ca7', 'photo-1581091226825-a6a2a5aee158', 'photo-1531297484001-80022131f5a1'],
       mediaType: 'image' as const
     },
@@ -33,7 +33,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         ? 'เว็บไซต์ขายไอเท็มจากในเกม โดยไอเท็มที่ขายคือ "เห็ด" ซึ่งได้จากเกมใน Roblox ที่ชื่อว่า "Creatures of Sonaria" มีฟังก์ชันหลัก ได้แก่ เข้าสู่ระบบ/สมัครสมาชิก เพิ่ม/ลบรายการสินค้า ตระกร้าสินค้า เติมเงิน ชำระเงิน และประวัติการซื้อขาย'
         : 'A website for selling in-game items, specifically "mushrooms" from the Roblox game "Creatures of Sonaria". Main features include login/registration, add/remove products, shopping cart, top-up money, payment, and transaction history.',
       tools: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js'],
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/aunyamon-p/Shroom_shop.git',
       images: ['photo-1488590528505-98d2b5aba04b'],
       mediaType: 'video' as const
     },
@@ -43,7 +43,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         ? 'เว็บไซต์แสดงข้อมูลทั่วไปของบริษัท'
         : 'A website displaying general company information.',
       tools: ['HTML', 'JavaScript', 'Tailwind CSS'],
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/aunyamon-p/CompanyWeb.git',
       images: ['photo-1649972904349-6e44c42644a7'],
       mediaType: 'video' as const
     },

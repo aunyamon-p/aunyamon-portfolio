@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface FooterProps {
@@ -8,6 +7,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ language }) => {
   const content = {
     th: {
+      name: 'Aunyamon.P',
       contact: 'ติดต่อ',
       quickLinks: 'ลิงค์ด่วน',
       home: 'หน้าแรก',
@@ -17,6 +17,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       rights: '© 2025 Aunyamon.P. สงวนลิขสิทธิ์ทุกประการ'
     },
     en: {
+      name: 'Aunyamon.P',
       contact: 'Contact',
       quickLinks: 'Quick Links',
       home: 'Home',
@@ -34,9 +35,53 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
   };
 
   return (
-    <footer className="bg-tech-slate text-white py-16">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 mb-8">
+    <footer className="relative bg-tech-slate text-white py-16 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-tech-cyan rounded-full animate-float"></div>
+        <div className="absolute top-20 right-20 w-24 h-24 bg-tech-cyan/50 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-tech-cyan/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-10 right-1/3 w-28 h-28 bg-tech-cyan/20 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 max-w-6xl">
+        <div className="grid md:grid-cols-3 gap-12 mb-8">
+          {/* Brand Section */}
+          <div>
+            <h3 className="text-3xl font-bold text-tech-cyan mb-6">
+              {currentContent.name}
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              {language === 'th' 
+                ? 'Frontend Developer ที่หลงใหลในการสร้างเว็บไซต์ที่สวยงามและใช้งานง่าย'
+                : 'Frontend Developer passionate about creating beautiful and user-friendly websites'
+              }
+            </p>
+          </div>
+
+          {/* Quick Links Section */}
+          <div>
+            <h3 className="text-2xl font-bold text-tech-cyan mb-6">
+              {currentContent.quickLinks}
+            </h3>
+            <div className="space-y-3">
+              {[
+                { label: currentContent.home, id: 'hero' },
+                { label: currentContent.about, id: 'about' },
+                { label: currentContent.skills, id: 'skills' },
+                { label: currentContent.projects, id: 'projects' }
+              ].map((link, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSection(link.id)}
+                  className="block text-gray-300 hover:text-tech-cyan transition-colors duration-300 text-left"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Contact Section */}
           <div>
             <h3 className="text-2xl font-bold text-tech-cyan mb-6">
@@ -64,29 +109,6 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
                 </svg>
                 <span>Rangsit Pathumthani, 12120</span>
               </div>
-            </div>
-          </div>
-
-          {/* Quick Links Section */}
-          <div>
-            <h3 className="text-2xl font-bold text-tech-cyan mb-6">
-              {currentContent.quickLinks}
-            </h3>
-            <div className="space-y-3">
-              {[
-                { label: currentContent.home, id: 'hero' },
-                { label: currentContent.about, id: 'about' },
-                { label: currentContent.skills, id: 'skills' },
-                { label: currentContent.projects, id: 'projects' }
-              ].map((link, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollToSection(link.id)}
-                  className="block text-gray-300 hover:text-tech-cyan transition-colors duration-300 text-left"
-                >
-                  {link.label}
-                </button>
-              ))}
             </div>
           </div>
         </div>

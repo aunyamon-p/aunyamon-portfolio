@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface SkillsSectionProps {
@@ -18,7 +17,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
     en: {
       title: 'Skills',
       categories: {
-        programming: 'Programming Languages',
+        programming: 'Tech Languages',
         frameworks: 'Libraries/Frameworks',
         tools: 'Tools'
       }
