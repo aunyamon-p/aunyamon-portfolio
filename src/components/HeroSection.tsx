@@ -88,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full sm:w-auto min-w-[200px] px-8 py-4 border-2 border-tech-cyan text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                  className="w-full sm:w-auto min-w-[200px] px-8 py-4 border-2 border-tech-cyan font-semibold text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate rounded-full transition-all duration-300 transform hover:scale-105"
                 >
                   <a href="https://github.com/aunyamon-p" target="_blank" rel="noopener noreferrer">
                     {currentContent.github}
