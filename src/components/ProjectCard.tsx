@@ -65,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ) : null}
           
           {/* Fallback UI เมื่อไม่มีวิดีโอหรือวิดีโอโหลดไม่ได้ */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center" style={{ display: 'none' }}>
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-tech-slate to-tech-slate-light items-center justify-center" style={{ display: 'none' }}>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-tech-cyan/20 flex items-center justify-center">
                 <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
