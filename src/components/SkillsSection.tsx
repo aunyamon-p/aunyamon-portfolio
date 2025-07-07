@@ -50,7 +50,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
   const currentContent = content[language];
 
   return (
-    <section ref={sectionRef} id="skills" className="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section ref={sectionRef} id="skills" className="relative py-20 bg-gradient-to-br from-tech-slate via-tech-slate-light to-gray-900 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-24 left-12 w-4 h-4 bg-tech-cyan/20 rounded-full animate-float"></div>
@@ -62,7 +62,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-tech-slate mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {currentContent.title}
           </h2>
           <div className="w-24 h-1 bg-tech-cyan mx-auto"></div>
