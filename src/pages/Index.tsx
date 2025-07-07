@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import Navbar from '@/components/Navbar';
 import LanguageToggle from '@/components/LanguageToggle';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -16,16 +17,21 @@ const Index = () => {
 
   return (
     <div className="font-prompt">
+      <Navbar language={language} />
       <LanguageToggle language={language} onToggle={handleLanguageToggle} />
       
       <main>
-        <HeroSection language={language} />
+        <section id="hero">
+          <HeroSection language={language} />
+        </section>
         <AboutSection language={language} />
         <SkillsSection language={language} />
         <ProjectsSection language={language} />
       </main>
       
-      <Footer language={language} />
+      <section id="contact">
+        <Footer language={language} />
+      </section>
     </div>
   );
 };

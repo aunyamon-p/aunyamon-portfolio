@@ -11,24 +11,24 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
       title: 'ทักษะ',
       categories: {
         programming: 'ภาษาโปรแกรมมิ่ง',
-        tools: 'เครื่องมือ',
-        frameworks: 'เฟรมเวิร์ก'
+        frameworks: 'ไลบรารี/เฟรมเวิร์ก',
+        tools: 'เครื่องมือ'
       }
     },
     en: {
       title: 'Skills',
       categories: {
         programming: 'Programming Languages',
-        tools: 'Tools',
-        frameworks: 'Frameworks'
+        frameworks: 'Libraries/Frameworks',
+        tools: 'Tools'
       }
     }
   };
 
   const skills = {
-    programming: ['JavaScript', 'TypeScript', 'C#', 'HTML5', 'CSS3', 'Python'],
-    tools: ['Git', 'VS Code', 'Azure', 'Figma', 'Postman', 'Chrome DevTools'],
-    frameworks: ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express.js', '.NET']
+    programming: ['HTML', 'CSS', 'JavaScript', 'TypeScript'],
+    frameworks: ['React', 'Node.js', 'Angular', 'Tailwind'],
+    tools: ['Figma', 'VS Code', 'GitHub']
   };
 
   const currentContent = content[language];
@@ -51,7 +51,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
                   {currentContent.categories[category as keyof typeof currentContent.categories]}
                 </h3>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   {skillList.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}

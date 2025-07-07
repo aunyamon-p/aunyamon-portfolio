@@ -1,7 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import ProjectCarousel from './ProjectCarousel';
 
 interface ProjectCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
   githubLink: string;
   images: string[];
   language: 'th' | 'en';
+  mediaType?: 'image' | 'video';
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -18,10 +20,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   tools,
   githubLink,
   images,
-  language
+  language,
+  mediaType = 'image'
 }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const content = {
     th: {
       viewCode: 'ดูโค้ด',
@@ -35,32 +36,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   const currentContent = content[language];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   return (
     <Card className="overflow-hidden bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-      <div className="relative h-48 overflow-hidden">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={`https://images.unsplash.com/${image}?w=400&h=200&fit=crop`}
-            alt={`${title} screenshot ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-        
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
+      {mediaType === 'image' ? (
+        <ProjectCarousel images={images} title={title} />
+      ) : (
+        <div className="relative h-48 overflow-hidden">
+          <div className="w-full h-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-tech-cyan/20 flex items-center justify-center">
+                <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <p className="text-white text-sm">Video Demo</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <CardContent className="p-6">
         <h3 className="text-xl font-bold text-tech-slate mb-3 group-hover:text-tech-cyan transition-colors">

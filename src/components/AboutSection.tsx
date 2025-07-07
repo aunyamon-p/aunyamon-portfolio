@@ -11,21 +11,23 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
     th: {
       title: 'เกี่ยวกับฉัน',
       subtitle: 'การศึกษา',
-      description: 'ฉันเป็น Frontend Developer ที่มีความหลงใหลในการสร้างเว็บไซต์ที่สวยงามและใช้งานง่าย ด้วยประสบการณ์ในการพัฒนาเว็บแอปพลิเคชันที่ทันสมัยและตอบสนองความต้องการของผู้ใช้งาน',
+      description: 'ฉันกำลังมุ่งเน้นไปที่การพัฒนาทักษะการพัฒนา Front-end และต้องการเรียนรู้เทคโนโลยี Backend เพิ่มเติม ฉันกำลังมองหาโอกาสฝึกงานที่จะให้ฉันได้รับประสบการณ์จริง ทำงานในโปรเจกตจริง และเรียนรู้การทำงานเป็นทีม ฉันพร้อมเสมอที่จะเรียนรู้เครื่องมือใหม่ๆ เทคโนโลยี และแนวปฏิบัติที่ดีเพื่อเติบโตเป็นนักพัฒนา',
       education: {
-        degree: 'ปริญญาตรี วิทยาการคอมพิวเตอร์',
-        university: 'มหาวิทยาลัยธรรมศาสตร์',
-        year: '2021 - 2025'
+        degree: 'ปริญญาตรี วิทยาศาสตร์คอมพิวเตอร์',
+        university: 'มหาวิทยาลัยกรุงเทพ',
+        faculty: 'คณะเทคโนโลยีและนวัตกรรม',
+        year: 'มิถุนายน 2023 - ปัจจุบัน'
       }
     },
     en: {
       title: 'About Me',
       subtitle: 'Education',
-      description: 'I am a Frontend Developer passionate about creating beautiful and user-friendly websites. With experience in developing modern web applications that meet user needs and provide excellent user experiences.',
+      description: "I'm currently focusing on improving my front-end development skills and want to learn more about backend technologies. I'm looking for an internship where I can gain real-world experience, work on real projects, and learn how to collaborate in a team. I'm always open to learning new tools, technologies and best practices to grow as a developer.",
       education: {
         degree: 'Bachelor of Computer Science',
-        university: 'Thammasat University',
-        year: '2021 - 2025'
+        university: 'Bangkok University',
+        faculty: 'Technology and Innovation Faculty',
+        year: 'June 2023 - Present'
       }
     }
   };
@@ -68,6 +70,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
                     </h4>
                     <p className="text-gray-600 text-lg mb-1">
                       {currentContent.education.university}
+                    </p>
+                    <p className="text-gray-600 text-base mb-1">
+                      {currentContent.education.faculty}
                     </p>
                     <p className="text-tech-cyan font-medium">
                       {currentContent.education.year}
