@@ -106,7 +106,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-tech-cyan" />
                 <span
-                  className="text-gray-300 hover:text-tech-cyan transition-colors"
+                  className="text-gray-300"
                 >
                   {currentContent.email}
                 </span>
