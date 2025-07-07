@@ -58,16 +58,6 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           {/* Aunyamon.P */}
           <div className="animate-fade-in">
             <h3 className="text-2xl font-bold text-tech-cyan mb-4">Aunyamon.P</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/aunyamon-p"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-tech-cyan transition-colors"
-              >
-                <Github size={20} />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
