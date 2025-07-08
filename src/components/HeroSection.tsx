@@ -103,7 +103,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
                   variant="outline"
                   className="w-full sm:w-[220px] h-[56px] px-6 py-4 border-2 border-tech-cyan font-semibold text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                   >
-                  <a href="${import.meta.env.BASE_URL}resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                     <span className="truncate">Resume</span>
                     <svg className="ml-2 w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
