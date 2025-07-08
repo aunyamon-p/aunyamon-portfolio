@@ -73,7 +73,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         ? 'เว็บไซต์จัดการลําดับรายการสิ่งที่ต้องทํา ประกอบด้วย SignIn , SignUp , Add Task , Edit Task , Delete Task , Kandan Board (Darg & Drop Tasks ได้)'
         : 'A task management website for organizing to-do lists, including SignIn, SignUp, Add Task, Edit Task, Delete Task, Kanban Board (Drag & Drop Tasks).',
       tools: ['HTML', 'Tailwind CSS', 'Angular'],
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/aunyamon-p/ToDoList.git',
       images: [
         '/lovable-uploads/f3963761-4414-4fd5-b7cf-e537125f86a7.png',
         '/lovable-uploads/b669765e-c469-48ce-93db-15da528b65c4.png',
