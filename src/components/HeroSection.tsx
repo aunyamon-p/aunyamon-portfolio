@@ -15,7 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
     th: {
       greeting: 'สวัสดี ฉันคือ',
       name: 'Aunyamon Plunsungket',
-      subtitle: 'Frontend Developer',
+      subtitle: 'Full Stack Developer',
       description: 'ยินดีต้อนรับสู่เว็บไซต์แสดงผลงานของฉัน',
       cta: 'ดูผลงานของฉัน',
       github: 'GitHub โปรไฟล์'
@@ -102,14 +102,36 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
                   asChild
                   variant="outline"
                   className="w-full sm:w-[220px] h-[56px] px-6 py-4 border-2 border-tech-cyan font-semibold text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  <a
+                    href="https://drive.google.com/file/d/1QJjKjlnKdKmXHDm9f-5vBhWqjtS5UpsL/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
                   >
-                  <a href="https://drive.google.com/file/d/1GpXAAj0LmWIX6HBj-ZfdF4lZd9t9-hCE/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                     <span className="truncate">Resume</span>
-                    <svg className="ml-2 w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    <svg
+                      className="ml-2 w-5 h-5 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z"
+                      />
                     </svg>
                   </a>
                 </Button>
+
               </div>
             </div>
           )}
