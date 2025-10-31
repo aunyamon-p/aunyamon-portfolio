@@ -104,7 +104,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language }) => {
                   className="w-full sm:w-[220px] h-[56px] px-6 py-4 border-2 border-tech-cyan font-semibold text-tech-cyan bg-transparent hover:bg-tech-cyan hover:text-tech-slate rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
                   <a
-                    href="https://drive.google.com/file/d/1QJjKjlnKdKmXHDm9f-5vBhWqjtS5UpsL/view?usp=sharing"
+                    href="https://drive.google.com/file/d/15Q49PbWvEcYHp7Fmy45BSSEL-sadg5oo/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center"
