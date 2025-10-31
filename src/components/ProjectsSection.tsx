@@ -44,13 +44,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
       mediaType: 'video' as const
     },
     {
-      title: 'Company Website',
+      title: 'Movie Explorer',
       description: language === 'th'
-        ? 'เว็บไซต์แสดงข้อมูลทั่วไปของบริษัท'
-        : 'A website displaying general company information.',
-      tools: ['HTML', 'Js', 'Tailwind CSS'],
-      githubLink: 'https://github.com/aunyamon-p/CompanyWeb.git',
-      images: ['/lovable-uploads/company.mp4'],
+        ? 'เว็บไซต์ค้นหาภาพยนตร์ที่ช่วยให้ผู้ใช้เรียกดูภาพยนตร์พร้อมภาพปก ดูรายละเอียดเรื่องย่อ วันที่ฉาย และคะแนน บันทึกภาพยนตร์ที่ชื่นชอบใน Watchlist ดูภาพยนตร์กำลังเข้าฉาย และค้นหาหรือกรองตามชื่อ ประเภท หรือคะแนน'
+        : 'A movie discovery web application where users can browse movies with cover images, view detailed information including synopsis, release date, and ratings, save favorites to a watchlist, see upcoming releases, and search or filter movies by title, genre, or rating.',
+      tools: ['React(Vite)', 'Tailwind CSS', 'TMDB API'],
+      githubLink: 'https://github.com/aunyamon-p/movie-explorer.git',
+      images: ['/lovable-uploads/movie.mp4'],
       mediaType: 'video' as const
     },
     {
@@ -59,20 +59,19 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         ? 'แพลตฟอร์มดูแลสุขภาพสัตว์เลี้ยงแบบครบวงจรผ่านเว็บไซต์และแชทบอท สามารถค้นหาคลินิก สัตวแพทย์ และรับคำแนะนำเบื้องต้นเกี่ยวกับสุขภาพสัตว์ได้'
         : 'A pet health care platform with website and chatbot for finding clinics, veterinarians, and receiving basic pet health advice.',
       tools: ['Bolt.new', 'React', 'Tailwind CSS', 'Supabase'],
-      githubLink: 'https://petbuddycare.org/',
+      githubLink: undefined,
       images: [
         '/lovable-uploads/71a0bb08-16a7-4d16-a1db-0a364748dae9.png',
         '/lovable-uploads/bf476bcd-0c05-479d-acb8-76e1091d5bec.png'
       ],
       mediaType: 'image' as const,
-      isWebLink: true
     },
     {
-      title: 'TodoList Website (UI)',
+      title: 'TodoList Website',
       description: language === 'th'
-        ? 'เว็บไซต์จัดการลําดับรายการสิ่งที่ต้องทํา ประกอบด้วย SignIn , SignUp , Add Task , Edit Task , Delete Task , Kandan Board (Darg & Drop Tasks ได้)'
-        : 'A task management website for organizing to-do lists, including SignIn, SignUp, Add Task, Edit Task, Delete Task, Kanban Board (Drag & Drop Tasks).',
-      tools: ['HTML', 'Tailwind CSS', 'Angular'],
+        ? 'เว็บไซต์จัดการงานแบบ full-stack ที่ช่วยให้ผู้ใช้จัดระเบียบ ติดตาม เพิ่ม แก้ไข และลบงานบน Kanban Board พร้อมบันทึกและดึงข้อมูลจาก MongoDB'
+        : 'A full-stack task management web application that allows users to organize, track, add, edit, and delete tasks on a Kanban board while saving and retrieving data from MongoDB.',
+      tools: ['React', 'Node.js', 'MongoDB'],
       githubLink: 'https://github.com/aunyamon-p/ToDoList.git',
       images: [
         '/lovable-uploads/f3963761-4414-4fd5-b7cf-e537125f86a7.png',
@@ -90,7 +89,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
 
   return (
     <section id="projects" className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-4 h-4 bg-tech-cyan/20 rounded-full animate-float"></div>
         <div className="absolute top-32 right-20 w-6 h-6 bg-tech-cyan/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
@@ -122,7 +120,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
                 images={project.images}
                 language={language}
                 mediaType={project.mediaType}
-                isWebLink={project.isWebLink}
               />
             </div>
           ))}

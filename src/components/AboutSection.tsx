@@ -29,7 +29,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
   const content = {
     th: {
       title: 'เกี่ยวกับฉัน',
-      description: "ฉันกำลังมุ่งเน้นในการพัฒนาทักษะ Front-end และต้องการเรียนรู้เทคโนโลยี Backend เพิ่มเติม ฉันกำลังมองหาตำแหน่งฝึกงานที่จะให้ประสบการณ์การทำงานจริง ทำโปรเจกต์จริง และเรียนรู้การทำงานเป็นทีม ฉันพร้อมเสมอที่จะเรียนรู้เครื่องมือใหม่ ๆ เทคโนโลยี และแนวปฏิบัติที่ดี เพื่อเติบโตในสายงาน Developer ตามที่ตั้งใจไว้",
+      description: "นักศึกษาวิทยาการคอมพิวเตอร์ที่มีความมุ่งมั่นและได้รับทุนการศึกษาจากมหาวิทยาลัย มีประสบการณ์ทำเว็บแอปจริง ๆ ชอบการพัฒนาแบบ Full-Stack และตั้งใจพัฒนาทักษะด้าน Backend อยู่เสมอ เพื่อสร้างงานที่สมบูรณ์แบบ สนุกกับการรับความท้าทายและทำงานร่วมกับคนอื่นอย่างเต็มที่",
       education: {
         title: 'การศึกษา',
         period: 'มิถุนายน 2023 - ปัจจุบัน',
@@ -40,7 +40,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
     },
     en: {
       title: 'About Me',
-      description: "I'm currently focusing on improving my front-end development skills and want to learn more about backend technologies. I'm looking for an internship where I can gain real-world experience, work on real projects, and learn how to collaborate in a team. I'm always open to learning new tools, technologies and best practices to grow as a developer.",
+      description: "Motivated Computer Science student and university scholarship recipient with hands-on experience in building web applications. Passionate about full-stack development and constantly improving backend skills to create end-to-end solutions. Eager to take on challenges and collaborate.",
       education: {
         title: 'Education',
         period: 'June 2023 - Present',
