@@ -29,24 +29,28 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
   const content = {
     th: {
       title: 'เกี่ยวกับฉัน',
-      description: "นักศึกษาวิทยาการคอมพิวเตอร์ที่มีความมุ่งมั่นและได้รับทุนการศึกษาจากมหาวิทยาลัย มีประสบการณ์ทำเว็บแอปจริง ๆ ชอบการพัฒนาแบบ Full-Stack และตั้งใจพัฒนาทักษะด้าน Backend อยู่เสมอ เพื่อสร้างงานที่สมบูรณ์แบบ สนุกกับการรับความท้าทายและทำงานร่วมกับคนอื่นอย่างเต็มที่",
+      description: 'นักศึกษาวิทยาการคอมพิวเตอร์ที่ได้รับทุนการศึกษา มีประสบการณ์ตรงในการพัฒนาเว็บแอปพลิเคชันแบบ Full-Stack หลงใหลในระบบ Backend และการสร้างแอปพลิเคชันที่ปรับขนาดได้ มุ่งมั่นแก้ปัญหาในโลกจริงและพร้อมทำงานเป็นทีมในสภาพแวดล้อม Agile',
       education: {
         title: 'การศึกษา',
         period: 'มิถุนายน 2023 - ปัจจุบัน',
         university: 'มหาวิทยาลัยกรุงเทพ',
         faculty: 'คณะเทคโนโลยีและนวัตกรรม',
-        major: 'สาขาวิทยาการคอมพิวเตอร์'
+        major: 'สาขาวิทยาการคอมพิวเตอร์',
+        gpa: 'GPA : 3.97',
+        courses: 'วิชาที่เกี่ยวข้อง : Database Design, Software Engineering, Data Structures & Algorithms'
       }
     },
     en: {
       title: 'About Me',
-      description: "Motivated Computer Science student and university scholarship recipient with hands-on experience in building web applications. Passionate about full-stack development and constantly improving backend skills to create end-to-end solutions. Eager to take on challenges and collaborate.",
+      description: 'Computer Science student and scholarship recipient with hands-on experience in full-stack web development. Passionate about backend systems and building scalable applications, driven to solve real-world problems and contribute to software engineering teams in agile environments.',
       education: {
         title: 'Education',
-        period: 'June 2023 - Present',
+        period: 'June 2023 – Present',
         university: 'Bangkok University',
-        faculty: 'Technology and Innovation faculty',
-        major: 'Major of Computer science'
+        faculty: 'Faculty of Technology and Innovation',
+        major: 'Bachelor of Computer Science',
+        gpa: 'GPA : 3.97',
+        courses: 'Relevant Courses : Database Design, Software Engineering, Data Structures & Algorithms'
       }
     }
   };
@@ -81,7 +85,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
 
           {/* Education Card */}
           <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-            <div className="border-tech-slate border-l-4 border-l-tech-cyan bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <div className="border-l-4 border-l-tech-cyan bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-tech-cyan rounded-full"></div>
                 <h3 className="text-2xl font-bold text-tech-cyan">
@@ -98,6 +102,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ language }) => {
                 </p>
                 <p className="text-tech-slate">
                   {currentContent.education.major}
+                </p>
+                <p className="text-tech-slate font-semibold">
+                  {currentContent.education.gpa}
+                </p>
+                <p className="text-gray-600 text-sm">
+                  {currentContent.education.courses}
                 </p>
                 <p className="text-tech-cyan font-semibold">
                   {currentContent.education.period}

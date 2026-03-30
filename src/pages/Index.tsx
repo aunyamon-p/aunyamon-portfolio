@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
+import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import Footer from '@/components/Footer';
 
@@ -24,6 +25,7 @@ const Index = () => {
         </section>
         <AboutSection language={language} />
         <SkillsSection language={language} />
+        <ExperienceSection language={language} />
         <ProjectsSection language={language} />
       </main>
       

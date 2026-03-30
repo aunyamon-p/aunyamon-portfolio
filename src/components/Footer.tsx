@@ -14,10 +14,11 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       home: 'หน้าแรก',
       about: 'เกี่ยวกับฉัน',
       skills: 'ทักษะ',
+      experience: 'ประสบการณ์',
       projects: 'ผลงาน',
       email: 'aunyamon.plun@gmail.com',
       phone: '+66 895992094',
-      location: 'ปทุมธานี, ประเทศไทย'
+      location: 'รังสิต ปทุมธานี, 12120'
     },
     en: {
       quickLinks: 'Quick Links',
@@ -25,10 +26,11 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       home: 'Home',
       about: 'About',
       skills: 'Skills',
+      experience: 'Experience',
       projects: 'Projects',
       email: 'aunyamon.plun@gmail.com',
       phone: '+66 895992094',
-      location: 'Pathum Thani, Thailand'
+      location: 'Rangsit Pathumthani, 12120'
     }
   };
 
@@ -50,7 +52,6 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
         <div className="absolute bottom-32 left-1/4 w-5 h-5 bg-tech-cyan/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 right-16 w-3 h-3 bg-tech-cyan/25 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
         <div className="absolute bottom-20 right-1/3 w-7 h-7 bg-tech-cyan/15 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-20 left-1/3 w-4 h-4 bg-tech-cyan/20 rounded-full animate-float" style={{ animationDelay: '5s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
@@ -58,44 +59,32 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           {/* Aunyamon.P */}
           <div className="animate-fade-in">
             <h3 className="text-2xl font-bold text-tech-cyan mb-4">Aunyamon.P</h3>
+            <a href="https://github.com/aunyamon" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-300 hover:text-tech-cyan transition-colors">
+              <Github size={18} />
+              <span>GitHub</span>
+            </a>
           </div>
 
           {/* Quick Links */}
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-xl font-bold text-tech-cyan mb-4">{currentContent.quickLinks}</h3>
             <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => scrollToSection('hero')}
-                  className="text-gray-300 hover:text-tech-cyan transition-colors"
-                >
-                  {currentContent.home}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-300 hover:text-tech-cyan transition-colors"
-                >
-                  {currentContent.about}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('skills')}
-                  className="text-gray-300 hover:text-tech-cyan transition-colors"
-                >
-                  {currentContent.skills}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('projects')}
-                  className="text-gray-300 hover:text-tech-cyan transition-colors"
-                >
-                  {currentContent.projects}
-                </button>
-              </li>
+              {[
+                { id: 'hero', label: currentContent.home },
+                { id: 'about', label: currentContent.about },
+                { id: 'skills', label: currentContent.skills },
+                { id: 'experience', label: currentContent.experience },
+                { id: 'projects', label: currentContent.projects },
+              ].map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-gray-300 hover:text-tech-cyan transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -105,11 +94,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-tech-cyan" />
-                <span
-                  className="text-gray-300"
-                >
-                  {currentContent.email}
-                </span>
+                <span className="text-gray-300">{currentContent.email}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-tech-cyan" />
@@ -126,7 +111,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8">
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Aunyamon Plunsungket. All rights reserved.</p>
+            <p>&copy; 2025 Aunyamon Plunsungket. All rights reserved.</p>
           </div>
         </div>
       </div>

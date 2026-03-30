@@ -18,9 +18,56 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
 
   const projects = [
     {
+      title: 'Smart Leave Management System',
+      description: language === 'th' 
+        ? 'ระบบอัตโนมัติสำหรับการขอลาและการแจ้งเตือนการอนุมัติ สร้าง workflow อัตโนมัติสำหรับคำขอลาและการแจ้งเตือนผู้อนุมัติ'
+        : 'Built an automated workflow for leave requests and approval notifications.',
+      tools: ['Backend Automation', 'Integration'],
+      githubLink: undefined,
+      images: [],
+      mediaType: 'image' as const
+    },
+    {
+      title: 'Lost & Found Management System',
+      description: language === 'th'
+        ? 'ออกแบบ Backend logic สำหรับระบบรายงานและติดตามสิ่งของหาย รวมถึงขั้นตอนการเคลมสิ่งของ'
+        : 'Designed backend logic for item reporting and claim workflows.',
+      tools: ['Java', 'Spring Boot', 'MySQL'],
+      githubLink: undefined,
+      images: [],
+      mediaType: 'image' as const
+    },
+    {
+      title: 'TodoList System',
+      description: language === 'th'
+        ? 'เว็บไซต์จัดการงานแบบ Kanban Board สำหรับติดตามงาน เพิ่ม แก้ไข และลบงานได้ พร้อมบันทึกข้อมูลลง MongoDB'
+        : 'Built a Kanban-based workflow for task tracking.',
+      tools: ['React', 'Node.js', 'MongoDB'],
+      githubLink: 'https://github.com/aunyamon-p/ToDoList.git',
+      images: [
+        '/lovable-uploads/f3963761-4414-4fd5-b7cf-e537125f86a7.png',
+        '/lovable-uploads/b669765e-c469-48ce-93db-15da528b65c4.png',
+        '/lovable-uploads/1194cd00-5bb0-497b-b26e-4cfecee3ac78.png',
+        '/lovable-uploads/1221d42b-d4ac-4c9e-97f6-2b9b660a2c80.png',
+        '/lovable-uploads/b07c058c-cd7a-4400-8ef6-e7d73ef02939.png',
+        '/lovable-uploads/e0c86601-ecf5-4a42-8719-484bd1e88a64.png'
+      ],
+      mediaType: 'image' as const
+    },
+    {
+      title: 'Library Management System',
+      description: language === 'th'
+        ? 'ออกแบบระบบฐานข้อมูลที่มีประสิทธิภาพสำหรับจัดการสต็อกหนังสือและข้อมูลผู้ใช้'
+        : 'Designed efficient data operations to manage book inventory and user records.',
+      tools: ['API', 'SQL Server', 'Database Design'],
+      githubLink: undefined,
+      images: [],
+      mediaType: 'image' as const
+    },
+    {
       title: 'MEOW COMPANY WEBSITE',
       description: language === 'th' 
-        ? 'เว็บไซต์ที่ออกแบบตาม User Story ที่อาจารย์กำหนดให้ เป็นระบบเฉพาะไว้สำหรับใช้งานในองค์กร เพื่อให้คนในองค์กรมีความสะดวกรวดเร็วในการจัดการอีเมล ทั้งการอ่าน และตอบกลับอีเมล ฟังก์ชันที่มี ได้แก่ สมัครสมาชิก เข้าสู่ระบบ เขียนอีเมล ส่งอีเมล ดูอีเมล ลบอีเมล อัปเดตสถานะอีเมล'
+        ? 'เว็บไซต์ที่ออกแบบตาม User Story ที่อาจารย์กำหนดให้ เป็นระบบเฉพาะไว้สำหรับใช้งานในองค์กร เพื่อให้คนในองค์กรมีความสะดวกรวดเร็วในการจัดการอีเมล ทั้งการอ่าน และตอบกลับอีเมล'
         : 'A website for internal email management, designed based on professor-defined User Stories. Main features include registration, login, compose and send emails, view inbox, reply, delete emails, and update email status.',
       tools: ['C#', 'HTML', 'CSS', 'Js', 'Azure'],
       githubLink: 'https://github.com/aunyamon-p/MeowCompany.git',
@@ -36,8 +83,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
     {
       title: 'SHROOM SHOP',
       description: language === 'th'
-        ? 'เว็บไซต์ขายไอเท็มจากในเกม โดยไอเท็มที่ขายคือ "เห็ด" ซึ่งได้จากเกมใน Roblox ที่ชื่อว่า "Creatures of Sonaria" มีฟังก์ชันหลัก ได้แก่ เข้าสู่ระบบ/สมัครสมาชิก เพิ่ม/ลบรายการสินค้า ตระกร้าสินค้า เติมเงิน ชำระเงิน และประวัติการซื้อขาย'
-        : 'A website for selling in-game items, specifically "mushrooms" from the Roblox game "Creatures of Sonaria". Main features include login/registration, add/remove products, shopping cart, top-up money, payment, and transaction history.',
+        ? 'เว็บไซต์ขายไอเท็มจากในเกม โดยไอเท็มที่ขายคือ "เห็ด" จากเกม Roblox "Creatures of Sonaria" มีฟังก์ชันหลัก ได้แก่ เข้าสู่ระบบ ตะกร้าสินค้า เติมเงิน และประวัติการซื้อขาย'
+        : 'A website for selling in-game items from Roblox "Creatures of Sonaria". Features include login, shopping cart, top-up, payment, and transaction history.',
       tools: ['HTML', 'CSS', 'Js', 'React.js', 'Node.js'],
       githubLink: 'https://github.com/aunyamon-p/Shroom_shop.git',
       images: ['/lovable-uploads/shroom.mp4'],
@@ -46,8 +93,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
     {
       title: 'Movie Explorer',
       description: language === 'th'
-        ? 'เว็บไซต์ค้นหาภาพยนตร์ที่ช่วยให้ผู้ใช้เรียกดูภาพยนตร์พร้อมภาพปก ดูรายละเอียดเรื่องย่อ วันที่ฉาย และคะแนน บันทึกภาพยนตร์ที่ชื่นชอบใน Watchlist ดูภาพยนตร์กำลังเข้าฉาย และค้นหาหรือกรองตามชื่อ ประเภท หรือคะแนน'
-        : 'A movie discovery web application where users can browse movies with cover images, view detailed information including synopsis, release date, and ratings, save favorites to a watchlist, see upcoming releases, and search or filter movies by title, genre, or rating.',
+        ? 'เว็บไซต์ค้นหาภาพยนตร์ ดูรายละเอียด บันทึก Watchlist และค้นหาตามชื่อ ประเภท หรือคะแนน'
+        : 'A movie discovery web application where users can browse movies, view details, save to watchlist, and search by title, genre, or rating.',
       tools: ['React(Vite)', 'Tailwind CSS', 'TMDB API'],
       githubLink: 'https://github.com/aunyamon-p/movie-explorer.git',
       images: ['/lovable-uploads/movie.mp4'],
@@ -65,23 +112,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
         '/lovable-uploads/bf476bcd-0c05-479d-acb8-76e1091d5bec.png'
       ],
       mediaType: 'image' as const,
-    },
-    {
-      title: 'TodoList Website',
-      description: language === 'th'
-        ? 'เว็บไซต์จัดการงานแบบ full-stack ที่ช่วยให้ผู้ใช้จัดระเบียบ ติดตาม เพิ่ม แก้ไข และลบงานบน Kanban Board พร้อมบันทึกและดึงข้อมูลจาก MongoDB'
-        : 'A full-stack task management web application that allows users to organize, track, add, edit, and delete tasks on a Kanban board while saving and retrieving data from MongoDB.',
-      tools: ['React', 'Node.js', 'MongoDB'],
-      githubLink: 'https://github.com/aunyamon-p/ToDoList.git',
-      images: [
-        '/lovable-uploads/f3963761-4414-4fd5-b7cf-e537125f86a7.png',
-        '/lovable-uploads/b669765e-c469-48ce-93db-15da528b65c4.png',
-        '/lovable-uploads/1194cd00-5bb0-497b-b26e-4cfecee3ac78.png',
-        '/lovable-uploads/1221d42b-d4ac-4c9e-97f6-2b9b660a2c80.png',
-        '/lovable-uploads/b07c058c-cd7a-4400-8ef6-e7d73ef02939.png',
-        '/lovable-uploads/e0c86601-ecf5-4a42-8719-484bd1e88a64.png'
-      ],
-      mediaType: 'image' as const
     }
   ];
 

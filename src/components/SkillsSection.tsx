@@ -29,25 +29,31 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
   const content = {
     th: {
       title: 'ทักษะของฉัน',
-      programmingLanguages: 'ภาษาโปรแกรม',
-      librariesFrameworks: 'ไลบรารี/เฟรมเวิร์ก',
-      tools: 'เครื่องมือ'
+      categories: [
+        { name: 'Frontend', skills: ['React', 'Angular', 'Tailwind CSS'] },
+        { name: 'Backend', skills: ['Node.js', 'Java (Spring Boot)', 'RESTful API'] },
+        { name: 'ฐานข้อมูล', skills: ['MySQL', 'SQL Server', 'MongoDB'] },
+        { name: 'เครื่องมือ', skills: ['GitHub', 'VS Code', 'Postman'] },
+        { name: 'ทักษะอื่น ๆ', skills: ['Problem-Solving', 'Teamwork', 'Communication'] },
+        { name: 'ภาษา', skills: ['ไทย (ภาษาแม่)', 'อังกฤษ (B1 – Intermediate, CEFR)'] }
+      ]
     },
     en: {
       title: 'My Skills',
-      programmingLanguages: 'Tech Languages',
-      librariesFrameworks: 'Libraries/Frameworks',
-      tools: 'Tools'
+      categories: [
+        { name: 'Frontend', skills: ['React', 'Angular', 'Tailwind CSS'] },
+        { name: 'Backend', skills: ['Node.js', 'Java (Spring Boot)', 'RESTful API'] },
+        { name: 'Database', skills: ['MySQL', 'SQL Server', 'MongoDB'] },
+        { name: 'Tools', skills: ['GitHub', 'VS Code', 'Postman'] },
+        { name: 'Soft Skills', skills: ['Problem-Solving', 'Teamwork', 'Communication'] },
+        { name: 'Language Proficiency', skills: ['Thai (Native)', 'English (B1 – Intermediate, CEFR)'] }
+      ]
     }
   };
 
-  const skills = {
-    programmingLanguages: ['HTML', 'CSS', 'JavaScript', 'TypeScript'],
-    librariesFrameworks: ['React', 'Node.js', 'Angular', 'Tailwind'],
-    tools: ['Figma', 'VsCode', 'Github']
-  };
-
   const currentContent = content[language];
+
+  const icons = ['💻', '⚙️', '🗄️', '🔧', '🤝', '🌐'];
 
   return (
     <section ref={sectionRef} id="skills" className="relative py-20 bg-gradient-to-b from-tech-slate to-tech-slate-light overflow-hidden">
@@ -68,84 +74,35 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
           <div className="w-24 h-1 bg-tech-cyan mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Programming Languages */}
-          <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-            <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
-                  <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentContent.categories.map((category, catIndex) => (
+            <div
+              key={catIndex}
+              className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
+              style={{ animationDelay: `${catIndex * 0.15}s` }}
+            >
+              <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="text-center mb-4">
+                  <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center text-2xl">
+                    {icons[catIndex]}
+                  </div>
+                  <h3 className="text-lg font-bold text-tech-slate">
+                    {category.name}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-tech-slate mb-4">
-                  {currentContent.programmingLanguages}
-                </h3>
-              </div>
-              <div className="flex flex-col w-full gap-3 justify-center">
-                {skills.programmingLanguages.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                <div className="flex flex-col w-full gap-2 justify-center">
+                  {category.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors text-center"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Libraries/Frameworks */}
-          <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-            <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
-                  <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-tech-slate mb-4">
-                  {currentContent.librariesFrameworks}
-                </h3>
-              </div>
-              <div className="flex flex-col w-full gap-3 justify-center">
-                {skills.librariesFrameworks.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Tools */}
-          <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-            <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
-                  <svg className="w-8 h-8 text-tech-cyan" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-tech-slate mb-4">
-                  {currentContent.tools}
-                </h3>
-              </div>
-              <div className="flex flex-col w-full gap-3 justify-center">
-                {skills.tools.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
