@@ -20,7 +20,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
     {
       title: 'Smart Leave Management System',
       description: language === 'th' 
-        ? 'ระบบอัตโนมัติสำหรับการขอลาและการแจ้งเตือนการอนุมัติ สร้าง workflow อัตโนมัติสำหรับคำขอลาและการแจ้งเตือนผู้อนุมัติ'
+        ? 'สร้างระบบ workflow อัตโนมัติสำหรับคำขอลาและการแจ้งเตือนการอนุมัติ'
         : 'Built an automated workflow for leave requests and approval notifications.',
       tools: ['Backend Automation', 'Integration'],
       githubLink: undefined,
@@ -40,7 +40,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
     {
       title: 'TodoList System',
       description: language === 'th'
-        ? 'เว็บไซต์จัดการงานแบบ Kanban Board สำหรับติดตามงาน เพิ่ม แก้ไข และลบงานได้ พร้อมบันทึกข้อมูลลง MongoDB'
+        ? 'สร้างระบบจัดการงานแบบ Kanban Board สำหรับติดตามงาน'
         : 'Built a Kanban-based workflow for task tracking.',
       tools: ['React', 'Node.js', 'MongoDB'],
       githubLink: 'https://github.com/aunyamon-p/ToDoList.git',
@@ -63,79 +63,32 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
       githubLink: undefined,
       images: [],
       mediaType: 'image' as const
-    },
-    {
-      title: 'MEOW COMPANY WEBSITE',
-      description: language === 'th' 
-        ? 'เว็บไซต์ที่ออกแบบตาม User Story ที่อาจารย์กำหนดให้ เป็นระบบเฉพาะไว้สำหรับใช้งานในองค์กร เพื่อให้คนในองค์กรมีความสะดวกรวดเร็วในการจัดการอีเมล ทั้งการอ่าน และตอบกลับอีเมล'
-        : 'A website for internal email management, designed based on professor-defined User Stories. Main features include registration, login, compose and send emails, view inbox, reply, delete emails, and update email status.',
-      tools: ['C#', 'HTML', 'CSS', 'Js', 'Azure'],
-      githubLink: 'https://github.com/aunyamon-p/MeowCompany.git',
-      images: [
-        '/lovable-uploads/e676d266-4394-48a8-af54-55c3a5b18edc.png',
-        '/lovable-uploads/0cade10b-3b62-4cdb-a52f-83c4458a8a9b.png',
-        '/lovable-uploads/87b30711-878d-4835-bb52-b17dcabfdd88.png',
-        '/lovable-uploads/88a23a80-3c95-429b-a30a-675a94651d92.png',
-        '/lovable-uploads/cd6ab665-124d-4b1e-b360-699deed5dc59.png'
-      ],
-      mediaType: 'image' as const
-    },
-    {
-      title: 'SHROOM SHOP',
-      description: language === 'th'
-        ? 'เว็บไซต์ขายไอเท็มจากในเกม โดยไอเท็มที่ขายคือ "เห็ด" จากเกม Roblox "Creatures of Sonaria" มีฟังก์ชันหลัก ได้แก่ เข้าสู่ระบบ ตะกร้าสินค้า เติมเงิน และประวัติการซื้อขาย'
-        : 'A website for selling in-game items from Roblox "Creatures of Sonaria". Features include login, shopping cart, top-up, payment, and transaction history.',
-      tools: ['HTML', 'CSS', 'Js', 'React.js', 'Node.js'],
-      githubLink: 'https://github.com/aunyamon-p/Shroom_shop.git',
-      images: ['/lovable-uploads/shroom.mp4'],
-      mediaType: 'video' as const
-    },
-    {
-      title: 'Movie Explorer',
-      description: language === 'th'
-        ? 'เว็บไซต์ค้นหาภาพยนตร์ ดูรายละเอียด บันทึก Watchlist และค้นหาตามชื่อ ประเภท หรือคะแนน'
-        : 'A movie discovery web application where users can browse movies, view details, save to watchlist, and search by title, genre, or rating.',
-      tools: ['React(Vite)', 'Tailwind CSS', 'TMDB API'],
-      githubLink: 'https://github.com/aunyamon-p/movie-explorer.git',
-      images: ['/lovable-uploads/movie.mp4'],
-      mediaType: 'video' as const
-    },
-    {
-      title: 'Pet Care Platform (Chatbot)',
-      description: language === 'th'
-        ? 'แพลตฟอร์มดูแลสุขภาพสัตว์เลี้ยงแบบครบวงจรผ่านเว็บไซต์และแชทบอท สามารถค้นหาคลินิก สัตวแพทย์ และรับคำแนะนำเบื้องต้นเกี่ยวกับสุขภาพสัตว์ได้'
-        : 'A pet health care platform with website and chatbot for finding clinics, veterinarians, and receiving basic pet health advice.',
-      tools: ['Bolt.new', 'React', 'Tailwind CSS', 'Supabase'],
-      githubLink: undefined,
-      images: [
-        '/lovable-uploads/71a0bb08-16a7-4d16-a1db-0a364748dae9.png',
-        '/lovable-uploads/bf476bcd-0c05-479d-acb8-76e1091d5bec.png'
-      ],
-      mediaType: 'image' as const,
     }
   ];
 
   const currentContent = content[language];
 
   return (
-    <section id="projects" className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section id="projects" className="relative py-20 bg-gradient-to-b from-tech-slate to-gray-900 overflow-hidden">
+      {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-4 h-4 bg-tech-cyan/20 rounded-full animate-float"></div>
         <div className="absolute top-32 right-20 w-6 h-6 bg-tech-cyan/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-1/4 w-5 h-5 bg-tech-cyan/15 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 right-10 w-3 h-3 bg-tech-cyan/25 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
         <div className="absolute bottom-32 right-1/3 w-7 h-7 bg-tech-cyan/10 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/2 w-2 h-2 bg-tech-cyan/30 rounded-full animate-float" style={{ animationDelay: '5s' }}></div>
       </div>
       
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-tech-slate mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {currentContent.title}
           </h2>
           <div className="w-24 h-1 bg-tech-cyan mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -150,6 +103,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) => {
                 images={project.images}
                 language={language}
                 mediaType={project.mediaType}
+                darkMode
               />
             </div>
           ))}

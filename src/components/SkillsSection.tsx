@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Monitor, Server, Database, Wrench, Users, Globe } from 'lucide-react';
 
 interface SkillsSectionProps {
   language: 'th' | 'en';
@@ -26,34 +27,16 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
     return () => observer.disconnect();
   }, []);
 
-  const content = {
-    th: {
-      title: 'ทักษะของฉัน',
-      categories: [
-        { name: 'Frontend', skills: ['React', 'Angular', 'Tailwind CSS'] },
-        { name: 'Backend', skills: ['Node.js', 'Java (Spring Boot)', 'RESTful API'] },
-        { name: 'ฐานข้อมูล', skills: ['MySQL', 'SQL Server', 'MongoDB'] },
-        { name: 'เครื่องมือ', skills: ['GitHub', 'VS Code', 'Postman'] },
-        { name: 'ทักษะอื่น ๆ', skills: ['Problem-Solving', 'Teamwork', 'Communication'] },
-        { name: 'ภาษา', skills: ['ไทย (ภาษาแม่)', 'อังกฤษ (B1 – Intermediate, CEFR)'] }
-      ]
-    },
-    en: {
-      title: 'My Skills',
-      categories: [
-        { name: 'Frontend', skills: ['React', 'Angular', 'Tailwind CSS'] },
-        { name: 'Backend', skills: ['Node.js', 'Java (Spring Boot)', 'RESTful API'] },
-        { name: 'Database', skills: ['MySQL', 'SQL Server', 'MongoDB'] },
-        { name: 'Tools', skills: ['GitHub', 'VS Code', 'Postman'] },
-        { name: 'Soft Skills', skills: ['Problem-Solving', 'Teamwork', 'Communication'] },
-        { name: 'Language Proficiency', skills: ['Thai (Native)', 'English (B1 – Intermediate, CEFR)'] }
-      ]
-    }
-  };
+  const title = language === 'th' ? 'ทักษะของฉัน' : 'My Skills';
 
-  const currentContent = content[language];
-
-  const icons = ['💻', '⚙️', '🗄️', '🔧', '🤝', '🌐'];
+  const categories = [
+    { name: 'Frontend', skills: ['React', 'Angular', 'Tailwind CSS'], icon: Monitor },
+    { name: 'Backend', skills: ['Node.js', 'Java (Spring Boot)', 'RESTful API'], icon: Server },
+    { name: 'Database', skills: ['MySQL', 'SQL Server', 'MongoDB'], icon: Database },
+    { name: 'Tools', skills: ['GitHub', 'VS Code', 'Postman'], icon: Wrench },
+    { name: 'Soft Skills', skills: ['Problem-Solving', 'Teamwork', 'Communication'], icon: Users },
+    { name: 'Language Proficiency', skills: ['Thai (Native)', 'English (B1 – Intermediate, CEFR)'], icon: Globe }
+  ];
 
   return (
     <section ref={sectionRef} id="skills" className="relative py-20 bg-gradient-to-b from-tech-slate to-tech-slate-light overflow-hidden">
@@ -69,40 +52,43 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ language }) => {
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}> 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {currentContent.title}
+            {title}
           </h2>
           <div className="w-24 h-1 bg-tech-cyan mx-auto"></div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentContent.categories.map((category, catIndex) => (
-            <div
-              key={catIndex}
-              className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
-              style={{ animationDelay: `${catIndex * 0.15}s` }}
-            >
-              <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="text-center mb-4">
-                  <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center text-2xl">
-                    {icons[catIndex]}
+          {categories.map((category, catIndex) => {
+            const IconComponent = category.icon;
+            return (
+              <div
+                key={catIndex}
+                className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
+                style={{ animationDelay: `${catIndex * 0.15}s` }}
+              >
+                <div className="bg-white h-full backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="text-center mb-4">
+                    <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-tech-slate to-tech-slate-light flex items-center justify-center">
+                      <IconComponent className="w-7 h-7 text-tech-cyan" />
+                    </div>
+                    <h3 className="text-lg font-bold text-tech-slate">
+                      {category.name}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold text-tech-slate">
-                    {category.name}
-                  </h3>
-                </div>
-                <div className="flex flex-col w-full gap-2 justify-center">
-                  {category.skills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors text-center"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  <div className="flex flex-col w-full gap-2 justify-center">
+                    {category.skills.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-tech-cyan/20 text-tech-slate rounded-lg text-sm border-0 hover:bg-tech-cyan/30 transition-colors text-center"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
